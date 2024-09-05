@@ -1,0 +1,21 @@
+<body>
+<div class="msg-container" [ngClass]="{'hide': !showWinner}">
+    <p id="msg">{{ winnerMessage }}</p>
+    <button (click)="resetGame()" id="new-btn">New Game</button>
+  </div>
+ 
+  <main>
+    <h1>Tic Tac Toe Game</h1>
+    <div class="container">
+      <div class="game">
+        <button *ngFor="let box of gameBoxes; let i = index" 
+                class="box" 
+                (click)="makeMove(i)" 
+                [disabled]="box">
+          {{ box }}
+        </button>
+      </div>
+    </div>
+    <button (click)="resetGame()" id="reset-btn">Reset Game</button>
+  </main>
+</body>
